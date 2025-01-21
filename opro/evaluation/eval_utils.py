@@ -487,8 +487,7 @@ def _get_accuracy(
   )
   if treat_include_as_correct:
     accuracy = int(bool(accuracy) or true_answer_included_in_pred_answer)
-  return accuracy
-
+  return int(not accuracy)
   # Alternatively, we may only check if the true_answer string is in the bag of
   # words of pred_answer, to avoid false negatives like when
   # true_answer == '(A)' and pred_answer == '(A) <some explanations>'.
